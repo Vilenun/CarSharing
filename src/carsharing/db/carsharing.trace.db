@@ -1,0 +1,147 @@
+2023-12-18 21:41:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Неверное количество столбцов
+Column count does not match; SQL statement:
+insert  into company (name) values() [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.CompanyDB.add(CompanyDB.java:29)
+	at carsharing.Menu.managerMenu(Menu.java:34)
+	at carsharing.Menu.mainMenu(Menu.java:13)
+	at carsharing.Main.main(Main.java:19)
+2023-12-19 20:03:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*]COMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES(COMPANY.ID))"
+Syntax error in SQL statement "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*]COMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES(COMPANY.ID))"; SQL statement:
+create table CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),COMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES(COMPANY.ID)) [42000-200]
+2023-12-19 20:39:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*]COMPANY_ID INT NOT NULLFOREIGN KEY(COMPANY_ID) REFERENCES COMPANY(ID))"
+Syntax error in SQL statement "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*]COMPANY_ID INT NOT NULLFOREIGN KEY(COMPANY_ID) REFERENCES COMPANY(ID))"; SQL statement:
+create table CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),COMPANY_ID INT NOT NULLFOREIGN KEY(COMPANY_ID) REFERENCES company(id)) [42000-200]
+2023-12-19 20:39:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*]COMPANY_ID INT NOT NULLFOREIGN KEY(COMPANY_ID) REFERENCES COMPANY(ID))"
+Syntax error in SQL statement "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*]COMPANY_ID INT NOT NULLFOREIGN KEY(COMPANY_ID) REFERENCES COMPANY(ID))"; SQL statement:
+create table CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),COMPANY_ID INT NOT NULLFOREIGN KEY(COMPANY_ID) REFERENCES company(id)) [42000-200]
+2023-12-19 20:39:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*] COMPANY_ID INT NOT NULL FOREIGN KEY(COMPANY_ID) REFERENCES COMPANY(ID))"
+Syntax error in SQL statement "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*] COMPANY_ID INT NOT NULL FOREIGN KEY(COMPANY_ID) REFERENCES COMPANY(ID))"; SQL statement:
+create table CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL), COMPANY_ID INT NOT NULL FOREIGN KEY(COMPANY_ID) REFERENCES company(id)) [42000-200]
+2023-12-19 20:41:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*] COMPANY_ID INT NOT NULL FOREIGN KEY (COMPANY_ID) REFERENCES COMPANY(ID))"
+Syntax error in SQL statement "CREATE TABLE CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL),[*] COMPANY_ID INT NOT NULL FOREIGN KEY (COMPANY_ID) REFERENCES COMPANY(ID))"; SQL statement:
+create table CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL), COMPANY_ID INT NOT NULL FOREIGN KEY (COMPANY_ID) REFERENCES company(id)) [42000-200]
+2023-12-20 21:00:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно удалить "COMPANY", пока существует зависимый объект "CONSTRAINT_103"
+Cannot drop "COMPANY" because "CONSTRAINT_103" depends on it; SQL statement:
+drop table if exists COMPANY [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.CompanyDB.initialize(CompanyDB.java:20)
+	at carsharing.Main.main(Main.java:18)
+2023-12-20 21:01:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL)ON[*] DELETE CASCADE"
+Syntax error in SQL statement "CREATE TABLE COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL)ON[*] DELETE CASCADE"; SQL statement:
+create table COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL)on delete cascade [42000-200]
+2023-12-20 21:01:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL)ON[*] DELETE CASCADE"
+Syntax error in SQL statement "CREATE TABLE COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL)ON[*] DELETE CASCADE"; SQL statement:
+create table COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL)on delete cascade [42000-200]
+2023-12-20 21:02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL) ON[*] DELETE CASCADE"
+Syntax error in SQL statement "CREATE TABLE COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL) ON[*] DELETE CASCADE"; SQL statement:
+create table COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL) on delete cascade [42000-200]
+2023-12-20 21:03:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно удалить "COMPANY", пока существует зависимый объект "CONSTRAINT_103"
+Cannot drop "COMPANY" because "CONSTRAINT_103" depends on it; SQL statement:
+drop table if exists COMPANY [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.CompanyDB.initialize(CompanyDB.java:20)
+	at carsharing.Main.main(Main.java:18)
+2023-12-20 21:03:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "COMPANY" уже существует
+Table "COMPANY" already exists; SQL statement:
+create table COMPANY (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR(50) UNIQUE NOT NULL) [42101-200]
+2023-12-24 13:32:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "COMPANYID" не найден
+Column "COMPANYID" not found; SQL statement:
+SELECT
+         ID,NAME,COMPANY_ID
+FROM
+         CAR
+WHERE
+         COMPANY_ID =  companyId
+         AND
+         ID NOT IN (
+                             SELECT RENTED_CAR_ID
+                             FROM CUSTOMER
+                             WHERE RENTED_CAR_ID IS NOT NULL) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:191)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:135)
+	at org.h2.command.dml.Select.prepare(Select.java:1209)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at carsharing.CarDB.showCustomer(CarDB.java:57)
+	at carsharing.CustomerDB.rent(CustomerDB.java:52)
+	at carsharing.CustomerMenu.menu(CustomerMenu.java:20)
+	at carsharing.MainMenu.menu(MainMenu.java:25)
+	at carsharing.Main.main(Main.java:24)
+2023-12-24 13:35:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT
+         CAR.ID,CAR.NAME,CAR.COMPANY_ID
+FROM
+         CAR
+LEFT JOIN
+        CUSTOMER
+        ON CAR.ID = CUSTOMER.RENTED_CAR_ID
+WHERE CUSTOMER.NAME IS NULL)[*]"
+Syntax error in SQL statement "SELECT
+         CAR.ID,CAR.NAME,CAR.COMPANY_ID
+FROM
+         CAR
+LEFT JOIN
+        CUSTOMER
+        ON CAR.ID = CUSTOMER.RENTED_CAR_ID
+WHERE CUSTOMER.NAME IS NULL)[*]"; SQL statement:
+SELECT
+         car.ID,car.NAME,car.COMPANY_ID
+FROM
+         CAR
+LEFT JOIN
+        CUSTOMER
+        ON CAR.ID = CUSTOMER.RENTED_CAR_ID
+WHERE CUSTOMER.NAME IS NULL) [42000-200]
+2023-12-24 14:05:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
