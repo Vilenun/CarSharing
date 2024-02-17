@@ -1,4 +1,4 @@
-Car Sharing project from Hyperskill/
+Car Sharing project from Hyperskill
 
 
 <p>Program that manages a car-sharing service allowing managers to add cars, new companies and for users to rent out their cars and find customers.</p>
